@@ -23,8 +23,6 @@ export class MyTree extends CGFobject {
     this.trunkTexture = trunkTexture;
     this.crownTexture = crownTexture;
 
-    
-
     this.trunkHeight  = 0.8 * height;  
     this.crownHeight  = 0.8 * height;  
     this.numPyramids  = Math.max(1, Math.round(this.crownHeight * 2)); 
@@ -32,7 +30,7 @@ export class MyTree extends CGFobject {
     this.trunk    = new MyCone(scene, 12, 1);
     this.pyramids = [];
     for (let i = 0; i < this.numPyramids; i++)
-      this.pyramids.push(new MyPyramid(scene, 4, 1));
+      this.pyramids.push(new MyPyramid(scene, 6, 1));
 
     this.trunkMat = new CGFappearance(scene);
     this.trunkMat.setAmbient(0.3,0.2,0.1,1);
@@ -76,9 +74,6 @@ export class MyTree extends CGFobject {
       const h    = heightStep;
       const r    = maxRadius - i * radiusStep;
       this.crownMat.apply();
-
-      
-  
       this.scene.pushMatrix();
       this.scene.translate(0, currentY + h/2, 0);
       this.scene.scale(r, h, r);

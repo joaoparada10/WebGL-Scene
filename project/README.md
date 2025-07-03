@@ -1,6 +1,12 @@
 # CG 2024/2025
 
 ## Group T06G03
+| Name             | Number    | E-Mail             |
+| ---------------- | --------- | ------------------ |
+| João Parada         | 201405280 | up201405280@up.pt              |
+| João Sousa        | 202207285 | up202207285@up.pt               |
+
+----
 
 ## Project Notes
 
@@ -25,4 +31,36 @@
 - The forest is built as a configurable matrix of trees (rows × columns) that introduces random variation in tree shape, tilt and placement, while still keeping them inside a fixed area.
 
 ![Screenshot 3](screenshots/project-t06g03-3.png)
+
+
+### 4. Helicopter
+
+![Screenshot 4](screenshots/project-t06g03-4.png)
+
+![Screenshot 5](screenshots/project-t06g03-5.png)
+
+
+### 5. Water and Fire
+
+![Screenshot 6](screenshots/project-t06g03-6.png)
+
+### 6. Shaders and animation
+
+#### 6.1 Flame ripple
+
+![Screenshot 7](screenshots/project-t06g03-7.png)
+
+
+### 7. Additional development
+
+For the additional development we decided to implement the heliport texture alternating using shaders.
+
+We also put a lot of extra work on making sure the scene lights made sense (light coming from sun position in panorama), made each fire a source of light (with attenuation) and improved some other minor details.
+
+Before
+![Screenshot 8](screenshots/project-t06g03-8.png)
+
+After
+![Screenshot Extra 2](screenshots/extra-final.png)
+
 

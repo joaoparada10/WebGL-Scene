@@ -2,8 +2,9 @@ import { CGFobject } from "../lib/CGF.js";
 import { MyBuildingModule } from "./MyBuildingModule.js";
 
 export class MyBuilding extends CGFobject {
-    constructor(scene, totalWidth, floors, windowsPerFloor, windowTexturePath, bombeirosColor) {
+    constructor(scene, totalWidth, floors, windowsPerFloor, bombeirosColor,windowTex, wallTex, signTex, doorTex, helipadTex, helipadUpTex, helipadDownTex) {
         super(scene);
+        this.floors = floors;
 
         const centralFloors = floors + 1;
         const centralWidth = totalWidth / 3;
@@ -21,9 +22,9 @@ export class MyBuilding extends CGFobject {
             depth,
             floors,
             windowsPerFloor,
-            windowTexturePath,
             false,
-            bombeirosColor
+            bombeirosColor, 
+            windowTex, wallTex, signTex, doorTex
         );
 
         this.center = new MyBuildingModule(
@@ -33,10 +34,10 @@ export class MyBuilding extends CGFobject {
             centralDepth,
             centralFloors,
             windowsPerFloor,
-            windowTexturePath,
             true,
             bombeirosColor,
-            "textures/helipad.png"
+            windowTex, wallTex, signTex, doorTex,
+            helipadTex, helipadUpTex, helipadDownTex
         );
 
         this.right = new MyBuildingModule(
@@ -46,26 +47,27 @@ export class MyBuilding extends CGFobject {
             depth,
             floors,
             windowsPerFloor,
-            windowTexturePath,
             false,
-            bombeirosColor
+            bombeirosColor,
+            windowTex, wallTex, signTex, doorTex
         );
     }
 
     display() {
         this.scene.pushMatrix();
-        this.scene.translate(-this.offset, 0, 0);
+        this.scene.translate(-this.offset, this.floors / 2, 0);
         this.left.display();
         this.scene.popMatrix();
         
         this.scene.pushMatrix();
-        this.scene.translate(0,0.5,0);
+        this.scene.translate(0, (this.floors +1)  / 2,0);
         this.center.display();
         this.scene.popMatrix();
 
         this.scene.pushMatrix();
-        this.scene.translate(this.offset, 0, 0);
+        this.scene.translate(this.offset, this.floors / 2, 0);
         this.right.display();
         this.scene.popMatrix();
+
     }
 }

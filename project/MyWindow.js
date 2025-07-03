@@ -2,7 +2,7 @@ import { CGFobject, CGFappearance, CGFtexture } from "../lib/CGF.js";
 import { MyQuad } from "./MyQuad.js";
 
 export class MyWindow extends CGFobject {
-    constructor(scene, texturePath) {
+    constructor(scene, windowTex) {
         super(scene);
         this.quad = new MyQuad(scene);
 
@@ -11,7 +11,7 @@ export class MyWindow extends CGFobject {
         this.appearance.setDiffuse(1, 1, 1, 1);
         this.appearance.setSpecular(0, 0, 0, 1);
         this.appearance.setShininess(10.0);
-        this.appearance.setTexture(new CGFtexture(scene, texturePath));
+        this.appearance.setTexture(windowTex);
     }
 
     display() {

@@ -6,7 +6,7 @@ import { CGFobject } from '../lib/CGF.js';
  * @param scene - Reference to MyScene object
  */
 export class MySphere extends CGFobject {
-    constructor(scene, slices, stacks, invert = true) {
+    constructor(scene, slices, stacks, invert = false) {
         super(scene);
         this.slices = slices;
         this.stacks = stacks;
@@ -20,7 +20,7 @@ export class MySphere extends CGFobject {
         this.normals = [];
         this.texCoords = [];
 
-        const normal_sign = !this.invert ? -1 : 1;
+        const normal_sign = this.invert ? -1 : 1;
         const total_stacks = this.stacks * 2;
         const delta_alfa = Math.PI / total_stacks; // Ângulo entre stacks (latitude)
         const delta_teta = 2 * Math.PI / this.slices; // ângulo entre slices (longitude)
@@ -39,10 +39,7 @@ export class MySphere extends CGFobject {
                 let y = cos_alfa;
                 let z = sin_teta * sin_alfa;
                 
-                
                 this.vertices.push(x, y, z);
-
-
                 this.normals.push(normal_sign * x,normal_sign *  y,normal_sign *  z);
                 this.texCoords.push(j / this.slices, i / total_stacks);
             }

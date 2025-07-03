@@ -27,15 +27,14 @@ export class MyForest extends CGFobject {
         const cx = -areaWidth/2 + dx*(j + 0.5);
         const cz = -areaDepth/2 + dz*(i + 0.5);
 
-        // offset aleatório dentro de 30% da célula
-        const ox = (Math.random() - 0.5) * dx * 0.3;
-        const oz = (Math.random() - 0.5) * dz * 0.3;
+        const ox = (Math.random() - 0.5) * dx * 0.4;
+        const oz = (Math.random() - 0.5) * dz * 0.4;
 
-        // parâmetros de árvore aleatórios
+        // tree params with some randomness
         const tiltDeg    = (Math.random() - 0.5) * 10;     
         const tiltAxis   = Math.random() < 0.5 ? 'X' : 'Z';
-        const baseRadius = 0.05 + Math.random() * 0.1;     
-        const height     = 1.0 + Math.random() * 1.0;  
+        const height     = 3.0 + Math.random() * 3.0;  
+        const baseRadius = 0.2 + Math.random() * 0.03 * height;  
         const greenShade = [
           0.1 + Math.random()*0.2,  
           0.6 + Math.random()*0.2,  
