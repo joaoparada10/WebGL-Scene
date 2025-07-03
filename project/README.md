@@ -1,13 +1,5 @@
 # CG 2024/2025
 
-## Group T06G03
-| Name             | Number    | E-Mail             |
-| ---------------- | --------- | ------------------ |
-| João Parada         | 201405280 | up201405280@up.pt              |
-| João Sousa        | 202207285 | up202207285@up.pt               |
-
-----
-
 ## Project Notes
 
 ### 1. Sky Sphere
